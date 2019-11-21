@@ -34,6 +34,7 @@
         $sqlCompra = "UPDATE `usuario` SET `carteira`= carteira - '$preco' WHERE id = '$idUser'";
         $compra = mysqli_query($conexao,$sqlCompra);
         $msgErro = "<p class='alerta'>Compra realizada com sucesso :)</p>";
+        header('Refresh:2');
       }
     }    
 

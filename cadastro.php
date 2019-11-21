@@ -5,22 +5,26 @@ if(isset($_POST['AddUser'])){
 	$login = ($_POST["login"]);	
 	$senha = $_POST["senha"];
 	$senha2 = $_POST["senha2"];
-	$sqlLogin = "SELECT COUNT(*) AS contadorNome FROM usuario WHERE nome = '$nome'";	
-	$sqlInsertLogin =  mysqli_query($conexao,$sqlLogin);		
-	$resultadoLogin = mysqli_fetch_array($sqlInsertLogin);
-	$verficadorLogin = $resultadoLogin['contadorNome'];
+	if (isset($_POST['empresa'])) {
+		$tipo = 2;
+	}
+	else{
+		$tipo = 1;
+	}
 	if ($senha == $senha2) {
-		if ($verficadorLogin < 1) {		
+		$sqlLogin = "SELECT COUNT(*) AS contadorNome FROM usuario WHERE nome = '$nome'";	
+		$sqlInsertLogin =  mysqli_query($conexao,$sqlLogin);		
+		$resultadoLogin = mysqli_fetch_array($sqlInsertLogin);
+		$verficadorLogin = $resultadoLogin['contadorNome'];
+		if($verficadorLogin < 1) {	
 			if(isset($_FILES['arquivo'])){
 				$extensao = strtolower(substr($_FILES['arquivo']['name'],-4));
 				$novoNome = $_POST["nome"].$extensao;
 				$diretorio = "uploadUser/";
 				move_uploaded_file($_FILES['arquivo']['tmp_name'],$diretorio.$novoNome);
-			$sql ="INSERT INTO `usuario`(`nome`, `login`, `senha`, `foto`,`carteira`) VALUES ('$nome','$login',md5('$senha'),'$novoNome','0')";
-			$inserir = mysqli_query($conexao,$sql);	
-			echo "Usuário cadastrado, tente realizar o login";
-			echo "$senha";
-			echo "$senha2";	
+			$sql ="INSERT INTO `usuario`(`nome`, `login`, `senha`, `foto`,`carteira`,`tipo`) VALUES ('$nome','$login',md5('$senha'),'$novoNome','0','$tipo')";
+			$inserir = mysqli_query($conexao,$sql);
+			$msg = "Usuário cadastrado, tente realizar o login";
 			}			
 
 		}	
@@ -33,65 +37,71 @@ if(isset($_POST['AddUser'])){
 ?>
 
 
-<?php include "header.php";?>
-<body style="background-image:url(oi.jpg); background-size:cover;">
-<div class="modal-dialog text-center">
-	<div class="col-sm-9 main section">	
-		<div class="modal-content">
-			<div class="col-12 form-input">
-				<form action="" method="post" enctype="multipart/form-data">
-				<div class="form-group PaddingTop">
-				<!-- cadastro do produto com nome,descricao,id usuario,preco,id categoria, foto-->
-				<?php
-					if(!empty($msg)){
-						echo "<div class='alert alert-danger' role='alert'>$msg</div>";
-					}
-				?>
-				<!--Inserir Nome-->
-				<div class="input-group mb-3">
-				<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">@</span>
+<?php include "header.php"; ?> 	
+<body>
+<div class="LoginDiv">	
+	<div class="loginArea">
+		<form action="" method="post" enctype="multipart/form-data">
+			<div class="logo">X Store</div>
+			<?php if(!empty($msg)){ echo "<div class='alert alert-danger' role='alert'>$msg</div>"; }?>	
+			<!--Nome-->
+			<div class="uk-margin margin-top">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input w-100 myInput" type="text" name="nome"  placeholder="Nome do usuário" require="">
 				</div>
-				<input type="text" class="form-control" name="nome"  placeholder="Nome do usuário" aria-label="Username" aria-describedby="basic-addon1">
-				</div>		
-
-				<!--Inserir login--> 
-				<div class="input-group mb-3">
-				<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">@</span>
-				</div>
-				<input type="text" class="form-control" name="login"  placeholder="Digite o login" aria-label="Username" aria-describedby="basic-addon1">
-				</div>	
-
-				<!--Inserir senha--> 
-				<div class="input-group mb-3">
-				<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">@</span>
-				</div>
-				<input type="password"class="form-control" name="senha" placeholder="Digite sua senha" aria-label="Username" aria-describedby="basic-addon1">
-				</div>	
-				
-				<div class="input-group mb-3">
-				<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">@</span>
-				</div>
-				<input type="password"class="form-control" name="senha2"  placeholder="Digite novamente sua senha" aria-label="Username" aria-describedby="basic-addon1">
-				</div>					
-
-				<!--Adicionar imagens--> 
-				<div class="input-group mb-3">
-				<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">@</span>
-				</div>
-				<input type="file" class="form-control" name="arquivo" aria-label="Username" aria-describedby="basic-addon1">
-				</div>				
-
-				<button type="submit" name="AddUser" class="btn btn-outline-primary btn-block">Cadastrar</button> 
-
-				<button class="btn btn-outline-primary btn-block"><a href="login.php">Voltar</a></button>
-				</div>	
-				</form>  
 			</div>	
-		</div>
+			<!--end of Nome-->	
+
+			<!--login-->
+			<div class="uk-margin margin-top">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input w-100 myInput" type="text" name="login"  placeholder="Login" require="">
+				</div>
+			</div>	
+			<!--end of login-->	
+			
+			<!--senha-->
+			<div class="uk-margin margin-top">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input w-100 myInput" type="password" name="senha"  placeholder="Senha" require="">
+				</div>
+			</div>	
+			<!--end of senha-->	
+		
+			<!--senha2-->
+			<div class="uk-margin margin-top">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input w-100 myInput" type="password" name="senha2"  placeholder="Digite novamente a senha" require="">
+				</div>
+			</div>	
+			<!--end of senha2-->
+
+			<!--Imagem-->
+
+			<div class="uk-margin margin-top">
+				<input type="file" class="uk-input w-100 myInput" name="arquivo" required="">
+			</div>	
+
+			<!--end of imagem-->
+
+			<!--Tipo do usuario-->
+			<div class="uk-margin">
+				<div class="uk-form-label"></div>
+				<div class="uk-form-controls uk-form-controls-text">
+					<label><input class="uk-radio" type="checkbox" name="empresa">Quero publicar jogos</label>
+				</div>
+			</div>
+			<!--Tipo do usuario-->	
+			
+			<!--botao cadastro-->
+			<button type="submit" name="AddUser" class="uk-button myBtn">Cadastrar</button> 
+			<hr class="uk-divider-icon">
+			<!--botao voltar-->
+			<div class="margin-bot"><a class="uk-button myBtn" href="login.php">Voltar</a></div>
+		</form>	
 	</div>
-</div>		
+</div>			

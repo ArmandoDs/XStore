@@ -19,7 +19,7 @@ if(isset($_POST['AddRecarga'])){
 	else{
 		$sql = "UPDATE `usuario` SET `carteira` = `carteira`+'$valor' WHERE `usuario`.`id` = $idUser";
 		$sqlUpdate =  mysqli_query($conexao,$sql);
-		header('Refresh:5');
+		header('Refresh:3');
 		$msg = "Recarga realizada com sucesso :) ";	
 	}
 	/*fim da verificação*/  							

@@ -31,8 +31,14 @@
  				$busca = mysqli_query($conexao,$sql);
  				$verificador = mysqli_fetch_array($busca);
  				$_SESSION['idUser'] = $verificador['id'];			
+ 				$_SESSION['tipo'] = $verificador['tipo'];			
 				$_SESSION['login'] = $login;
-				header('Location:user/index.php');
+				if ($_SESSION['tipo'] == 1) {
+					header('Location:user/index.php');	
+				}
+				elseif ($_SESSION['tipo'] == 2) {
+					header('Location:empresa/index.php');
+				}
 			}
 
 	}

@@ -31,6 +31,7 @@
 					<input class="uk-input  w-100 myInput" name="senha" placeholder="senha" type="password">
 				</div>
 			</div>
+						
 			<!--botao para realizar login-->
 			<button type="submit" name="btnLogin" class="uk-button myBtn">Entrar</button>
 		

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Nov-2019 às 11:33
+-- Tempo de geração: 21-Nov-2019 às 14:16
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.10
 
@@ -45,36 +45,6 @@ INSERT INTO `categoria` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `jogo`
---
-
-CREATE TABLE `jogo` (
-  `id` int(11) NOT NULL,
-  `titulo` varchar(200) NOT NULL,
-  `descricao` varchar(700) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
-  `requisitos_min` varchar(599) NOT NULL,
-  `requisitos_inidicados` varchar(599) NOT NULL,
-  `preco` double NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `numero_vendas` int(11) NOT NULL,
-  `foto` blob DEFAULT NULL,
-  `likes` int(11) NOT NULL,
-  `deslikes` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `jogo`
---
-
-INSERT INTO `jogo` (`id`, `titulo`, `descricao`, `id_categoria`, `requisitos_min`, `requisitos_inidicados`, `preco`, `id_usuario`, `numero_vendas`, `foto`, `likes`, `deslikes`) VALUES
-(17, 'The witcher 3', 'Nice rpg', 10, '8gb ram, i3 ,30gb hd', '8gb ram, i3 ,30gb hd', 233, 18, 0, 0x546865207769746368657220332e6a7067, 0, 0),
-(18, 'Pubg', 'Nice batlle royale ', 9, '8gb ram, i3 ,30gb hd', '8gb ram, i3 ,30gb hd', 120, 18, 0, 0x507562672e6a7067, 0, 0),
-(19, 'Call of Duty Mobile', 'awdfafaw', 10, '8gb ram, i3 ,30gb hd', '8gb ram, i3 ,30gb hd', 34, 18, 0, 0x43616c6c206f662044757479204d6f62696c652e6a7067, 0, 0);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `usuario`
 --
 
@@ -84,15 +54,18 @@ CREATE TABLE `usuario` (
   `login` varchar(200) NOT NULL,
   `senha` varchar(35) NOT NULL,
   `carteira` double DEFAULT NULL,
-  `foto` blob NOT NULL
+  `foto` blob NOT NULL,
+  `tipo` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `carteira`, `foto`) VALUES
-(18, 'diogo', 'ds', '522748524ad010358705b6852b81be4c', 0, 0x64696f676f6a666966);
+INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `carteira`, `foto`, `tipo`) VALUES
+(18, 'diogo', 'ds', '522748524ad010358705b6852b81be4c', 0, 0x64696f676f6a666966, 1),
+(21, 'ma', 'ma', 'b74df323e3939b563635a2cba7a7afba', 0, 0x6d612e6a7067, 1),
+(22, 'Rockstar', 'r', '4b43b0aee35624cd95b910189b3dc231', 0, 0x526f636b737461722e6a7067, 2);
 
 --
 -- Índices para tabelas despejadas
@@ -103,14 +76,6 @@ INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `carteira`, `foto`) VALUE
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `jogo`
---
-ALTER TABLE `jogo`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_categoria` (`id_categoria`),
-  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Índices para tabela `usuario`
@@ -129,16 +94,10 @@ ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de tabela `jogo`
---
-ALTER TABLE `jogo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
