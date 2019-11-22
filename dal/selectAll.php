@@ -17,21 +17,23 @@
 
 ?>
 
-<div class="grid-item">
-    <div class="card">
-    <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><img src="../upload/<?php echo "$foto";?>"class="card-image" alt="..."></a>
-        <div class="card-info">
-            <h2><?php echo "$titulo";?></h2>
-            <p class="card-text"></p>
-            <a href="deleteJogo.php?id=<?php echo "$id";?>">
-                <button class="delete-button">Excluir</button>
-            </a>
 
-            <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20" >
-                <button class="view-button">Visualizar</button>
-            </a>
+    <div>
+        <div class="uk-card uk-card-default" style="overflow:hidden;">
+            <div class="uk-card-media-top">
+                <a href="SelectJogo.php?idJogo=<?php echo "$id";?>"><img src="../upload/<?php echo "$foto";?>"class="card-image" alt=""></a>
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title"><?php echo "$titulo";?></h3>
+                <p><?php echo "$preco";?></p>
+                <a href="SelectJogo.php?idJogo=<?php echo "$id";?>" class="uk-button uk-button-danger">Visualizar</a>
+            </div>
         </div>
     </div>
-</div>
+
+    <!--
+    <h3 class="uk-margin-remove"><?php echo "$titulo";?></h3>
+    <p class="uk-margin-remove"><a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"></a></p>
+    -->
 
 <?php } ?>

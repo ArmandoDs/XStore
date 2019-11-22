@@ -2,7 +2,7 @@
   include "../connect.php";
   $sql = "SELECT c.nome as nome_categoria ,j.* FROM jogo j
   INNER JOIN categoria c on c.id = j.id_categoria
-  ORDER by numero_vendas DESC LIMIT 4
+  ORDER by numero_vendas DESC LIMIT 5
   ";
 
   $busca = mysqli_query($conexao,$sql);
@@ -16,18 +16,12 @@
     /*$visualizacao = $array['avaliacao'];*/
 
 ?>
-
-<div class="grid-item">
-    <div class="card">
-    <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><img src="../upload/<?php echo "$foto";?>"class="card-image" alt="..."></a>
-        <div class="card-info">
-            <h2><?php echo "$titulo";?></h2>
-            <p class="card-text"></p>
-            <button class="delete-button">Excluir</button>
-            <button href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20" class="view-button">Visualizar</button>
+    <li class="uk-transition-toggle" tabindex="0" style="overflow:hidden;">
+        <img src="../upload/<?php echo "$foto";?>"class="card-image" alt="">
+        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                    <h3 class="uk-margin-remove"><?php echo "$titulo";?></h3>
+                    <a href="SelectJogo.php?idJogo=<?php echo "$id";?>" class="uk-button uk-button-text">Visualizar</a>
         </div>
-    </div>
-</div>
-
+    </li>   
 
 <?php } ?>

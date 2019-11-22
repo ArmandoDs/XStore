@@ -10,9 +10,6 @@
 <link rel="stylesheet" type="text/css" href="../css/styleCard.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script src="../script/script.js"></script>
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../owlcarousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="../owlcarousel/assets/owl.theme.default.min.css">
 <meta charset="UTF-8">
 <style>
 *{

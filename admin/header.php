@@ -4,16 +4,18 @@
     <title>X STORE</title>	 
 <!-- UIkit CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
-
 <!-- UIkit JS -->
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>       
 <link rel="stylesheet" type="text/css" href="../css/styleCard.css">
-<link rel="stylesheet" href="../css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script src="../script/script.js"></script>
-<link rel="stylesheet" href="../owlcarousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="../owlcarousel/assets/owl.theme.default.min.css">
+<meta charset="UTF-8">
+<style>
+*{
+  font-family: 'Play', sans-serif;
+}
+</style>
 
 </head>
 
@@ -40,7 +42,6 @@
     <div class="itemMenu center sumir" id="center"><a class="menuLink" id="menuIcon" uk-icon="icon:chevron-double-left"></a></div>
     <div class="iconMenuHide" ><a id="menuIconHide" uk-icon="icon:menu"></a></div>
     <div class="itemMenu" ><a href="index.php" class="menuLink menuIcon" uk-tooltip="Loja" uk-icon="icon: home"></a><a class="menuLink" href="index.php">Loja</a></div>
-    <div class="itemMenu" ><a  href="AddJogo.php" class="menuLink menuIcon" uk-tooltip="Adicionar jogos" uk-icon="icon:  plus"></a><a class="menuLink"  href="AddJogo.php">Adicionar jogo</a></div>
     <div class="itemMenu" ><a  href="Categoria.php" class="menuLink menuIcon" uk-tooltip="Adicionar categorias" uk-icon="icon:  plus"></a><a class="menuLink"  href="Categoria.php">Adicionar categorias</a></div>
     <div class="logout" uk-tooltip="Realizar logout"><a href="session.php" class="menuLink menuIcon" uk-icon="icon: sign-out"></a><a class="menuLink" href="session.php">sair</a></div>
   </div>

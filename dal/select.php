@@ -52,9 +52,14 @@
     <img class="imageGame" src="../upload/<?php echo "$foto";?>">
     <div class="compraDiv">
     <form action="" method="post">
-      <a ><button class="uk-button uk-button-danger btnHide">$<?php echo "$preco";?></button></a>
-      <a><button class="uk-button uk-button-danger btnHide colorFix"name="btnBuy" id="comprarBtn" type="submit">Comprar</button></a>
+      <a ><button class="uk-button uk-button-danger btnHide colorFix">$<?php echo "$preco";?></button></a>
+      <?php if($_SESSION['tipo'] == 1){?>  
+        <a><button class="uk-button uk-button-danger btnHide colorFix"name="btnBuy" id="comprarBtn" type="submit">Comprar</button></a>
+      <?php } ?>      
     </form>
+    <?php if($_SESSION['tipo'] == 1911){?>  
+        <a href="../dal/deleteJogo.php?idJogo=<?php echo "$id";?>"><button class="uk-button uk-button-danger btnHide" id="btn-apagar" >deletar jogo</button></a>
+      <?php } ?>
     </div>
 
       <div class="uk-card uk-card-default uk-width-2-3@m">

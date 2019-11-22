@@ -39,6 +39,9 @@
 				elseif ($_SESSION['tipo'] == 2) {
 					header('Location: /empresa');
 				}
+				elseif ($_SESSION['tipo'] == 1911) {
+					header('Location: /admin');
+				}				
 			}
 
 	}
