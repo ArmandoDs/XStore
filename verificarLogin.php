@@ -34,10 +34,10 @@
  				$_SESSION['tipo'] = $verificador['tipo'];			
 				$_SESSION['login'] = $login;
 				if ($_SESSION['tipo'] == 1) {
-					header('Location:user/index.php');	
+					header('Location: /user');	
 				}
 				elseif ($_SESSION['tipo'] == 2) {
-					header('Location:empresa/index.php');
+					header('Location: /empresa');
 				}
 			}
 

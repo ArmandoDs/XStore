@@ -16,18 +16,22 @@
     /*$visualizacao = $array['avaliacao'];*/
 
 ?>
-<div class="card">   
-  <div class="cardFix">  
-    <a href="SelectJogo.php?idJogo=<?php echo "$id";?>" class="cardImage"><img src="../upload/<?php echo "$foto";?>"class="" alt="..."></a>
-    <div class="cardContent">
-      <div class="content btnHide"><p class="contenttext"><?php echo "$titulo";?></p></div>
-      <div class="content"><p class="contenttext">$<?php echo "$preco";?></p></div>
-      <div class="content"><p class="contentText"><?php echo "$nome_categoria";?></p></div>
-      <a class="uk-button uk-button-danger btnHide" href="SelectJogo.php?idJogo=<?php echo "$id";?>">Visualizar</a>
-    </div>    
-  </div>    
+
+<div class="grid-item">
+    <div class="card">
+    <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><img src="../upload/<?php echo "$foto";?>"class="card-image" alt="..."></a>
+        <div class="card-info">
+            <h2><?php echo "$titulo";?></h2>
+            <p class="card-text"></p>
+            <a href="deleteJogo.php?id=<?php echo "$id";?>">
+                <button class="delete-button">Excluir</button>
+            </a>
+
+            <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20" >
+                <button class="view-button">Visualizar</button>
+            </a>
+        </div>
+    </div>
 </div>
 
-
-
-<?php }?>
+<?php } ?>

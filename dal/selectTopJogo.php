@@ -16,44 +16,18 @@
     /*$visualizacao = $array['avaliacao'];*/
 
 ?>
-<!--
-<div class="card">
-  <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><img src="../upload/<?php echo "$foto";?>"class="card-img-top" alt="..."></a>
-  <div class="card-body">
-    <h5 class="card-title"><?php echo "$titulo";?></h5>
-  </div>
-</div>
-  -->
-<div class="card bg-dark text-white">
-<a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><img src="../upload/<?php echo "$foto";?>"class="card-img-top" alt="..."></a>
-  <div class="card-img-overlay">
-    <h5 class="card-title"><?php echo "$titulo";?></h5>
-    <p class="card-text"></p>
-    <a  href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><button class="btn btn-primary" type="submit">Visualizar</button></a>
-  </div>
-</div>
 
-<!--
-  <div class="card">
-  <i class="m material-icons">dashboard</i>
-    <a href="selectJogo.php?idJogo=<?php echo "$id";?>" ><img class="cardImage" src="../upload/<?php echo "$foto";?>"></a>
-  <div class="cardText">
-      <p class=""><?php echo "$titulo";?></p>
-
-      <!--<div class="cardText"><p class="text"> descriçao: <?php echo "$descricao";?></p></div>-->
-
-      <!--<div class="cardText"><p class="text"> id_usuario:<?php echo "$id_usuario";?></p></div>-->
-<!--
-      <p class=""><?php echo "$nome_categoria";?></p>
-
-      <p class="">$<?php echo "$preco";?></p>
-
-
-      <a  href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><button class="btn" type="submit">Visualizar</button></a>
+<div class="grid-item">
+    <div class="card">
+    <a href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20"><img src="../upload/<?php echo "$foto";?>"class="card-image" alt="..."></a>
+        <div class="card-info">
+            <h2><?php echo "$titulo";?></h2>
+            <p class="card-text"></p>
+            <button class="delete-button">Excluir</button>
+            <button href="SelectJogo.php?idJogo=<?php echo "$id";?>?visualizacao=20" class="view-button">Visualizar</button>
+        </div>
     </div>
-  </div>-->
+</div>
 
 
-
-
-<?php }?>
+<?php } ?>

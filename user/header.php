@@ -10,6 +10,9 @@
 <link rel="stylesheet" type="text/css" href="../css/styleCard.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script src="../script/script.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../owlcarousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="../owlcarousel/assets/owl.theme.default.min.css">
 <meta charset="UTF-8">
 <style>
 *{
@@ -40,7 +43,7 @@
   <div class="menu">
     <div class="itemMenu center sumir" id="center"><a class="menuLink" id="menuIcon" uk-icon="icon:chevron-double-left"></a></div>
     <div class="iconMenuHide" ><a id="menuIconHide" uk-icon="icon:menu"></a></div>
-    <div class="itemMenu" ><a href="index.php" class="menuLink menuIcon" uk-tooltip="Loja" uk-icon="icon: home"></a><a class="menuLink" href="index.php">Loja</a></div>
+    <div class="itemMenu" ><a href="/user" class="menuLink menuIcon" uk-tooltip="Loja" uk-icon="icon: home"></a><a class="menuLink" href="index.php">Loja</a></div>
     <div class="itemMenu"><a class="menuLink menuIcon" href="insertCarteira.php" uk-tooltip="Realizar recarga" uk-icon="icon: credit-card"></a><a class="menuLink" href="insertCarteira.php">Recarga</a></div>
     <div class="logout" uk-tooltip="Realizar logout"><a href="session.php" class="menuLink menuIcon" uk-icon="icon: sign-out"></a><a class="menuLink" href="session.php">sair</a></div>
   </div>
