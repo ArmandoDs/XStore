@@ -1,0 +1,21 @@
+.section-content {
+    margin: 75px 0 0 75px;
+}
+
+.section-content > h4 {
+    color: white;
+}
+
+.section-content input[type=text] {
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.section-content input[type=submit] {
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: #32a852;
+    color: white;
+}
