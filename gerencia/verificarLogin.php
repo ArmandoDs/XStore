@@ -39,7 +39,7 @@
 				elseif ($_SESSION['tipo'] == 1911) {
 					$_SESSION['idUser'] = $verificador['id'];					
 				   $_SESSION['login'] = $login;					
-					header('Location: /xstore/gerencia/admin');
+					header('Location: /admin');
 				}	
 				else{
 					$erros[] = "<p>Usuário ou senha incorreto :(</p>"; 	
