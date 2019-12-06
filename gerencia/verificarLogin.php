@@ -34,12 +34,12 @@
 				if ($_SESSION['tipo'] == 2) {
 					$_SESSION['idUser'] = $verificador['id'];					
 				   $_SESSION['login'] = $login;					
-					header('Location: /empresa');
+					header('Location: empresa');
 				}
 				elseif ($_SESSION['tipo'] == 1911) {
 					$_SESSION['idUser'] = $verificador['id'];					
 				   $_SESSION['login'] = $login;					
-					header('Location: /admin');
+					header('Location: admin');
 				}	
 				else{
 					$erros[] = "<p>Usuário ou senha incorreto :(</p>"; 	

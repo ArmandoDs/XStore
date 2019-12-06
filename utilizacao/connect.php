@@ -1,7 +1,7 @@
 <?php
-$servername="127.0.0.1";
+$servername="localhost";
 $database="lojaics";
-$username="marcos";
-$password="senha123";
+$username="root";
+$password="";
 $conexao =mysqli_connect($servername,$username,$password,$database);
 ?>

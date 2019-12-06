@@ -48,6 +48,22 @@
   <div class="menuFixo">  
     <div class="menuFixoDiv" uk-tooltip="<?php echo "$nome";?>"><img class="menuFixoImg" src="../uploadUser/<?php echo "$foto";?>"/></div>
   </div>  
+      <!--alerta-->
+      <?php if(!empty($msgErro1)){ ?>  
+      <div class="uk-alert-danger alertaFix" id="Alerta" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+        <p><?php echo "$msgErro1";?></p>
+      </div>
+    <?php } ?>
+    <!--end of alerta--> 
+    <!--sucesso-->
+    <?php if(!empty($msg)){ ?>  
+      <div class="uk-alert-success alertaFix" id="Alerta" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+        <p><?php echo "$msg";?></p>
+      </div>
+    <?php } ?>
+    <!--end of sucesso-->
 
   
 

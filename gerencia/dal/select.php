@@ -61,21 +61,90 @@
         <a href="../dal/deleteJogo.php?idJogo=<?php echo "$id";?>"><button class="uk-button uk-button-danger btnHide" id="btn-apagar" >deletar jogo</button></a>
       <?php } ?>
     <?php if($idUser == $id_usuario ){?>  
-        <a><p class="uk-button uk-button-danger btnHide" id="btn-editar">Editar</p></a>
+        <a id="btn-editar"><p class="uk-button uk-button-danger btnHide">Editar</p></a>
       <?php } ?>
     </div>
+    <?php if($idUser == $id_usuario ){?>  
+        <div class="uk-card uk-card-default uk-width-2-3@m" id="editArea">
+        <form action="../dal/updateJogo.php" method="post" enctype="">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">
+                        <input class="uk-input" name="id_jogo" type="text" id="id-2">
+                        <h3 class="uk-card-title uk-margin-remove-bottom" name="idJogo"  id="titulo-2"><?php echo "$titulo";?></h3>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <h5>Descriçao:</h5>
+                <!--Input de descricao-->
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <textarea class="uk-textarea" name="descricao" rows="5" id="descricao-2"></textarea>
+                    </div>
+                </div>
+                <!-- end of Input de descricao-->
+            </div>
+            <div class="uk-card-body">
+              <h5>Genero: </h5>
+                <!--Input de categoria-->
+                <div class="uk-margin">
+                  <div uk-form-custom="target: > * > span:last-child">
+                    <select required="" name="id_categoria">
+                      <option class="white" value="<?php echo "$id_categoria";?>"><?php echo "$nome_categoria";?></option>
+                        <?php
+                        include "../connect.php";
+                        $sql = "SELECT * FROM Categoria";
+                        $busca = mysqli_query($conexao,$sql);
+                        while ($array = mysqli_fetch_array($busca)) {
+                          $id = $array['id'];
+                          $nome = $array['nome'];
+                        ?>	
+                          <option value="<?php echo "$id";?>"><p><?php echo "$nome";?></p></option>
+                        <?php }?>	
+                    </select>
+                    <span class="uk-link">
+                      <span uk-icon="icon: pencil"></span>
+                      <span></span>
+                    </span>
+                  </div>
+                </div>
+                <!-- end of Input de categoria-->
+            </div>
+            <div class="uk-card-body">
+            <h5>Preço: </h5>
+            <!--Input de titulo-->
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <a class="uk-form-icon" uk-icon="icon: pencil"></a>
+                    <input class="uk-input" name="preco" type="text" id="preco-2">
+                </div>
+            </div>
+            <!-- end of Input de titulo-->
+            </div>   
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <button type="submit" class="uk-button uk-button-danger" name="updateJogo">CONFIRMAR ALTERAÇÕES</button>
+              </div>
+            </div>
+            </form>         
+        </div>                 
+      <?php } ?>    
 
-<div class="uk-card uk-card-default uk-width-2-3@m">
+<div class="uk-card uk-card-default uk-width-2-3@m" id="DescricaoHide">
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
             <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom"><?php echo "$titulo";?></h3>
+                <h3 class="uk-card-title uk-margin-remove-bottom" id="id-1"><?php echo "$idJogo";?></h3>
+                <h3 class="uk-card-title uk-margin-remove-bottom" id="titulo-1"><?php echo "$titulo";?></h3>
             </div>
         </div>
     </div>
     <div class="uk-card-body">
         <h5>Descriçao:</h5>
-        <p><?php echo "$descricao";?></p>
+        <p id="descricao-1"><?php echo "$descricao";?></p>
     </div>
     <div class="uk-card-body">
       <h5>Genero: </h5>
@@ -83,35 +152,10 @@
     </div>
     <div class="uk-card-body">
     <h5>Preço: </h5>
-      <p>$<?php echo "$preco";?></p>
+      <p id="preco-1"><?php echo "$preco";?></p>
     </div>         
 </div>
 
-<div class="uk-card uk-card-default uk-width-2-3@m">
-    <div class="uk-card-header">
-        <div class="uk-grid-small uk-flex-middle" uk-grid>
-            <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom"><?php echo "$titulo";?></h3>
-            </div>
-        </div>
-    </div>
-    <div class="uk-card-body">
-        <h5>Descriçao:</h5>
-        <p><?php echo "$descricao";?></p>
-    </div>
-    <div class="uk-card-body">
-      <h5>Genero: </h5>
-      <p><?php echo "$nome_categoria";?></p>
-    </div>
-    <div class="uk-card-body">
-    <h5>Preço: </h5>
-      <p>$<?php echo "$preco";?></p>
-    </div> 
-    <div class="uk-card-body">
-    <h5>fodase: </h5>
-      <input type="text" name="naosei" id="" >
-    </div>          
-</div>
 
 
       <!--mensagem de erro-->
