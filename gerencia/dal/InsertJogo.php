@@ -29,7 +29,7 @@ if(isset($_POST['AddJogo'])){
 				$novoNome = $_POST["titulo"].$extensao;
 				$diretorio = "../upload/";
 				move_uploaded_file($_FILES['arquivo']['tmp_name'],$diretorio.$novoNome);
-				$sql ="INSERT INTO `jogo`(`titulo`, `descricao`, `id_categoria`, `requisitos_min`, `requisitos_inidicados`, `preco`, `id_usuario`, `numero_vendas`, `foto`, `likes`, `deslikes`) VALUES ('$titulo', '$descricao', $id_categoria, '$requisitos_min', '$requisitos_inidicados', '$preco', '$id_usuario', 0, '$novoNome', 0, 0)";
+				$sql ="INSERT INTO jogo (`titulo`, `descricao`, `id_categoria`, `requisitos_min`, `requisitos_inidicados`, `preco`, `id_usuario`, `numero_vendas`, `foto`, `likes`, `deslikes`) VALUES ('$titulo', '$descricao', $id_categoria, '$requisitos_min', '$requisitos_inidicados', '$preco', '$id_usuario', 0, '$novoNome', 0, 0)";
 				$msg = "Jogo adicionado";
 			}
 		}	
