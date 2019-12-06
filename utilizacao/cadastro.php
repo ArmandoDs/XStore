@@ -6,7 +6,7 @@ if(isset($_POST['AddUser'])){
 	$senha = $_POST["senha"];
 	$senha2 = $_POST["senha2"];
 	if (isset($_POST['empresa'])) {
-		$tipo = 2;
+		$tipo = 1;
 	}
 	else{
 		$tipo = 1;
@@ -89,12 +89,6 @@ if(isset($_POST['AddUser'])){
 			<!--end of imagem-->
 
 			<!--Tipo do usuario-->
-			<div class="uk-margin">
-				<div class="uk-form-label"></div>
-				<div class="uk-form-controls uk-form-controls-text">
-					<label><input class="uk-radio" type="checkbox" name="empresa">Quero publicar jogos</label>
-				</div>
-			</div>
 			<!--Tipo do usuario-->	
 			
 			<!--botao cadastro-->

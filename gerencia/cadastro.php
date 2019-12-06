@@ -9,7 +9,7 @@ if(isset($_POST['AddUser'])){
 		$tipo = 2;
 	}
 	else{
-		$tipo = 1;
+		$tipo = 2;
 	}
 	if ($senha == $senha2) {
 		$sqlLogin = "SELECT COUNT(*) AS contadorNome FROM usuario WHERE nome = '$nome'";	
@@ -48,7 +48,7 @@ if(isset($_POST['AddUser'])){
 			<div class="uk-margin margin-top">
 				<div class="uk-inline">
 					<span class="uk-form-icon" uk-icon="icon: user"></span>
-					<input class="uk-input w-100 myInput" type="text" name="nome"  placeholder="Nome do usuário" require="">
+					<input class="uk-input w-100 myInput" type="text" name="nome"  placeholder="Nome da empresa" require="">
 				</div>
 			</div>	
 			<!--end of Nome-->	
@@ -89,12 +89,6 @@ if(isset($_POST['AddUser'])){
 			<!--end of imagem-->
 
 			<!--Tipo do usuario-->
-			<div class="uk-margin">
-				<div class="uk-form-label"></div>
-				<div class="uk-form-controls uk-form-controls-text">
-					<label><input class="uk-radio" type="checkbox" name="empresa">Quero publicar jogos</label>
-				</div>
-			</div>
 			<!--Tipo do usuario-->	
 			
 			<!--botao cadastro-->
