@@ -35,7 +35,7 @@
 					$_SESSION['idUser'] = $verificador['id'];			
 					$_SESSION['tipo'] = $verificador['tipo'];			
 					$_SESSION['login'] = $login;
-					header('Location: /xstore/utilizacao/user');	
+					header('Location: /user');
 				}		
 				else{
 					$erros[] = "<p>Usuário ou senha incorreto :(</p>"; 	
