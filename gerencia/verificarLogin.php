@@ -24,7 +24,7 @@
 				$erros[] = "<p>Não se esqueça de preencher o campo senha :)</p>";				
 			}		
 			elseif($verficadorLogin < 1){
-				$erros[] = "<p>Usuário ou senha incorreto :(</p>"; 				
+				$erros[] = "<p>Usuário ou senha incorreto :(</p>";
 			}
 			elseif (empty($erros)){
 				$sql = "SELECT * FROM `usuario` WHERE senha = md5('$senha') AND login = '$login'";
@@ -34,7 +34,7 @@
 				if ($_SESSION['tipo'] == 2) {
 					$_SESSION['idUser'] = $verificador['id'];					
 				   $_SESSION['login'] = $login;					
-					header('Location: /xstore/gerencia/empresa');
+					header('Location: /empresa');
 				}
 				elseif ($_SESSION['tipo'] == 1911) {
 					$_SESSION['idUser'] = $verificador['id'];					
