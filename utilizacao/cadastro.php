@@ -20,7 +20,7 @@ if(isset($_POST['AddUser'])){
 			if(isset($_FILES['arquivo'])){
 				$extensao = strtolower(substr($_FILES['arquivo']['name'],-4));
 				$novoNome = $_POST["nome"].$extensao;
-				$diretorio = "uploadUser/";
+				$diretorio = "./uploadUser/";
 				move_uploaded_file($_FILES['arquivo']['tmp_name'],$diretorio.$novoNome);
 			$sql ="INSERT INTO `usuario`(`nome`, `login`, `senha`, `foto`,`carteira`,`tipo`) VALUES ('$nome','$login',md5('$senha'),'$novoNome','0','$tipo')";
 			$inserir = mysqli_query($conexao,$sql);

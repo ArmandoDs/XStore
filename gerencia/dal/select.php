@@ -49,7 +49,7 @@
           <p><?php echo "$msgErro";?></p>
       </div>
     <?php } ?>
-    <img class="imageGame" src="../upload/<?php echo "$foto";?>">
+    <img class="imageGame" src="../uploadUser/nnjpeg">
     <div class="compraDiv">
     <form action="" method="post">
       <a ><button class="uk-button uk-button-danger btnHide colorFix">$<?php echo "$preco";?></button></a>

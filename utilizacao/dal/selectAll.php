@@ -21,7 +21,7 @@
     <div>
         <div class="uk-card uk-card-default" style="overflow:hidden;">
             <div class="uk-card-media-top">
-                <a href="SelectJogo.php?idJogo=<?php echo "$id";?>"><img src="../upload/<?php echo "$foto";?>"class="card-image" alt=""></a>
+                <a href="SelectJogo.php?idJogo=<?php echo "$id";?>"><img src="../uploadUser/rr.jpg"class="card-image" alt=""></a>
             </div>
             <div class="uk-card-body">
                 <h3 class="uk-card-title"><?php echo "$titulo";?></h3>

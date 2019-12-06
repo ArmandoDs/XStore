@@ -1,0 +1,7 @@
+AuthType Basic
+
+AuthName "Restricted Files"
+
+AuthUserFile /etc/generalFiles/.htpasswd
+
+Require valid-user

@@ -8,6 +8,6 @@ if(isset($_POST['updateJogo'])){
         $sql ="UPDATE `jogo` SET  `descricao` = '$descricao', `id_categoria` = '$id_categoria', `preco`= '$preco' WHERE `id` = '$id_jogo' ";
         $inserir = mysqli_query($conexao,$sql);
         $msg = "Informações atualizadas";
-        header('location: /xstore/gerencia/empresa');	
+        header('location: ../empresa');	
 }		
 ?>

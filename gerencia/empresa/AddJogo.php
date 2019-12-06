@@ -2,7 +2,7 @@
 <?php include "header.php" ?>
 <body>
 <div class="cardArea">	
-	<?php include "../dal/insertJogo.php";  ?>
+	<?php include "../dal/InsertJogo.php";  ?>
 	<h4 class="white">Cadastrar Categoria</h4>
 	<form action="" method="post" enctype="multipart/form-data">
 	<!-- cadastro do produto com nome,descricao,id usuario,preco,id categoria, foto-->
@@ -49,7 +49,7 @@
 					<option class="white" value="">Selecione o genero</option>
 						<?php
 						include "../connect.php";
-						$sql = "SELECT * FROM Categoria";
+						$sql = "SELECT * FROM categoria";
 						$busca = mysqli_query($conexao,$sql);
 						while ($array = mysqli_fetch_array($busca)) {
 							$id = $array['id'];

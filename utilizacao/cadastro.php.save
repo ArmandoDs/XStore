@@ -6,10 +6,10 @@ if(isset($_POST['AddUser'])){
 	$senha = $_POST["senha"];
 	$senha2 = $_POST["senha2"];
 	if (isset($_POST['empresa'])) {
-		$tipo = 2;
+		$tipo = 1;
 	}
 	else{
-		$tipo = 2;
+		$tipo = 1;
 	}
 	if ($senha == $senha2) {
 		$sqlLogin = "SELECT COUNT(*) AS contadorNome FROM usuario WHERE nome = '$nome'";	
@@ -20,7 +20,7 @@ if(isset($_POST['AddUser'])){
 			if(isset($_FILES['arquivo'])){
 				$extensao = strtolower(substr($_FILES['arquivo']['name'],-4));
 				$novoNome = $_POST["nome"].$extensao;
-				$diretorio = "./uploadUser/";
+				$diretorio = "/";
 				move_uploaded_file($_FILES['arquivo']['tmp_name'],$diretorio.$novoNome);
 			$sql ="INSERT INTO `usuario`(`nome`, `login`, `senha`, `foto`,`carteira`,`tipo`) VALUES ('$nome','$login',md5('$senha'),'$novoNome','0','$tipo')";
 			$inserir = mysqli_query($conexao,$sql);
@@ -48,7 +48,7 @@ if(isset($_POST['AddUser'])){
 			<div class="uk-margin margin-top">
 				<div class="uk-inline">
 					<span class="uk-form-icon" uk-icon="icon: user"></span>
-					<input class="uk-input w-100 myInput" type="text" name="nome"  placeholder="Nome da empresa" require="">
+					<input class="uk-input w-100 myInput" type="text" name="nome"  placeholder="Nome do usuário" require="">
 				</div>
 			</div>	
 			<!--end of Nome-->	

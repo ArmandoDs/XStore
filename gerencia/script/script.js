@@ -14,7 +14,8 @@ $(document).ready(function(){
   
 
   //script da janela de ediçaõ//
-  $("#editArea").hide();    
+  $("#editArea").hide(); 
+  $("#id-1").hide();   
   $("#id-2").val($("#id-1").text());
   $("#titulo-2").val($("#titulo-1").text());
   $("#descricao-2").val($("#descricao-1").text());

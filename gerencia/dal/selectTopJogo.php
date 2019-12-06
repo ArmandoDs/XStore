@@ -17,7 +17,7 @@
 
 ?>
     <li class="uk-transition-toggle" tabindex="0" style="overflow:hidden;">
-        <img src="../upload/<?php echo "$foto";?>"class="card-image" alt="">
+        <img src="../uploadUser/nnjpeg"class="card-image" alt="">
         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                     <h3 class="uk-margin-remove"><?php echo "$titulo";?></h3>
                     <a href="SelectJogo.php?idJogo=<?php echo "$id";?>" class="uk-button uk-button-text">Visualizar</a>

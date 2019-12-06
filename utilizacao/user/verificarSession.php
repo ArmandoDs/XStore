@@ -2,6 +2,6 @@
 	session_start();
 	$sessaoLogin = $_SESSION['login'];
 	if ($sessaoLogin == null) {
-		header('location: /login');
+		header('location: /login.php');
 	}
 ?>
