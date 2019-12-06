@@ -1,1 +1,11 @@
+#Adds login and password fields
+AuthType Basic
 
+#Just the message wich will appear
+AuthName "Restricted Files"
+
+#The passwords file location
+AuthUserFile /etc/generalFiles/.htpasswd
+
+#What makes the magic happen
+Require valid-user
